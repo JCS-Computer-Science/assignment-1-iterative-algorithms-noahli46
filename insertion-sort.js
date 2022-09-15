@@ -1,9 +1,9 @@
 function swap (array, lower){
 	let temp = array[lower + 1]
-	array[lower + 1 ] = array[lower]
-	array[lower] = temp
 	// [5,4] temp = 4
+	array[lower + 1 ] = array[lower]
 	// [5,5]
+	array[lower] = temp
 	// [4,5]
 }
 

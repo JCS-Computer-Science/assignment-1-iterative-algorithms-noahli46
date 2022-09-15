@@ -1,14 +1,6 @@
 function bubbleSort(array) {
-	/*
-    ** Compare the first two elements and swap if necessary.
-    ** Then compare the second and third elements and swap if
-    ** necessary. Continue until you've checked and swapped (if needed)
-    ** the last and second last elements.
-    
-    ** Repeat the above process until you get through an entire
-    ** cycle without needing any swaps
-    */
-    for (let j = 0; j < array.length; j++) {
+    for (let step = 0; step < array.length ; step++) {
+        let swapped = false
         for (let i = 0; i < array.length; i++) {
             let a = i
             let b = i + 1
@@ -19,9 +11,11 @@ function bubbleSort(array) {
                 swapped = true
             }
         }
+        if (swapped == false){
+            return array
+        }
     }
-	return array;
+    return array // should only run in empty arrays as step < array.length would be 0 < 0 which is false and it doesnt run
 }
-
 module.exports = bubbleSort;
 
